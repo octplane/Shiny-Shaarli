@@ -1,0 +1,45 @@
+<style>
+body {
+  border: 0px;
+  padding: 0px;
+  width: 400px;
+}
+iframe {
+  border: 0px;
+  display:none;
+}
+</style>
+<script>
+function populate_iframe()
+{
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.extension.sendRequest({action: 'gpmeGetOptions'}, function(theOptions) {
+      var options;
+      var base_url;
+      options = theOptions;
+      console.log(options);
+      base_url = options['base_url'];
+      if(base_url == null)
+      {
+        document.getElementById('configure_me').setAttribute('style','display:block');
+        document.getElementById('source').setAttribute('style','display:none');
+      } else {
+        document.getElementById('configure_me').setAttribute('style','display:none');
+        document.getElementById('source').setAttribute('style','display:block');
+        var url = tab.url;
+        var title = tab.title || url;
+        var if_url = base_url + '/index.php?post=' + encodeURIComponent(url)+'&title=' + encodeURIComponent(title)+'&source=shiny_shaarli';
+        document.getElementById('source').setAttribute('src', if_url);
+      }
+    });
+  });
+
+}
+</script>
+<body onload="populate_iframe()">
+<div id='configure_me'>
+  <h3>Welcome to Shiny Shaarli</h3>
+  <b>please setup the extension by going in the Options menu.</b>
+</div>
+<iframe id='source' width='400' height='420'></iframe>  
+</body>

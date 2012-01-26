@@ -1,0 +1,12 @@
+<script type="text/javascript" src="../fancy-settings/lib/store.js"></script>
+<script>
+var settings = new Store("settings", {});
+var settingsObj = settings.toObject();
+
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+  if (request.action == 'gpmeGetOptions') {
+    sendResponse(settings.toObject());
+  }
+});
+
+</script>

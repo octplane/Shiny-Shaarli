@@ -1,0 +1,45 @@
+<html>
+<head><title>My Test Extension Options</title></head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+  var shaarli_root = document.getElementById("shaarli_root").value;
+  alert(shaarli_root);
+
+  localStorage["favorite_color"] = color;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var favorite = localStorage["shaarli_configuration"];
+  if (!favorite) {
+    return;
+  }
+  var select = document.getElementById("color");
+  for (var i = 0; i < select.children.length; i++) {
+    var child = select.children[i];
+    if (child.value == favorite) {
+      child.selected = "true";
+      break;
+    }
+  }
+}
+
+</script>
+
+<body onload="restore_options()">
+
+Your Shaarli url:
+<input type='text' id='shaarli_root' value='http://host.domain.com/shaarli/' />
+<br>
+<button onclick="save_options()">Save</button>
+</body>
+</html>
