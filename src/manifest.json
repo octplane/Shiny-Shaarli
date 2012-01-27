@@ -2,7 +2,13 @@
   "name": "Shiny Shaarli",
   "version": "1.0.3",
   "description": "Open Shaarli post interface from inside Chrome.",
+  // This is the button that display in chrome bar
   "browser_action": {
+    "default_icon": "assets/button_icon.png",
+    "default_title" : "Open Shaarli",
+  },
+  // This displays in the url bar
+  "page_action": {
     "default_icon": "assets/button_icon.png",
     "popup" : "html/popup.html"
   },
