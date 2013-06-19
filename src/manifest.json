@@ -1,16 +1,15 @@
 {
   "name": "Shiny Shaarli",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "manifest_version": 2,
   "description": "Open Shaarli post interface from inside Chrome.",
-  // This is the button that display in chrome bar
+  "icons": { "16": "assets/16x16.png",
+         "48": "assets/48x48.png",
+        "128": "assets/128x128.png" },
   "browser_action": {
     "default_icon": "assets/button_icon.png",
     "default_title" : "Open Shaarli",
-  },
-  // This displays in the url bar
-  "page_action": {
-    "default_icon": "assets/button_icon.png",
-    "popup" : "html/popup.html"
+    "default_popup": "html/popup.html"
   },
   "options_page" : "fancy-settings/index.html",
   "background_page": "html/background.html",
@@ -18,7 +17,5 @@
     "https://www.googleapis.com/",
     "tabs"
   ],
-  "icons": { "16": "assets/16x16.png",
-           "48": "assets/48x48.png",
-          "128": "assets/128x128.png" }
+  "offline_enabled": false
 }
