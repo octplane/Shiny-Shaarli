@@ -12,7 +12,6 @@
     "default_popup": "html/popup.html"
   },
   "options_page" : "fancy-settings/index.html",
-  "background_page": "html/background.html",
   "permissions": [
     "https://www.googleapis.com/",
     "tabs"
