@@ -15,7 +15,7 @@ function populate_iframe()
       document.getElementById('source').setAttribute('style','display:block');
       var url = tab.url;
       var title = tab.title || url;
-      var if_url = base_url + '/index.php?post=' + encodeURIComponent(url)+'&title=' + encodeURIComponent(title)+'&source=shiny_shaarli';
+      var if_url = base_url + '/?post=' + encodeURIComponent(url)+'&title=' + encodeURIComponent(title)+'&source=shiny_shaarli';
       document.getElementById('source').setAttribute('src', if_url);
     }
   });
