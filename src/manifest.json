@@ -13,8 +13,11 @@
   },
   "options_page" : "fancy-settings/index.html",
   "permissions": [
-    "https://www.googleapis.com/",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*",
     "tabs"
   ],
-  "offline_enabled": false
+  "offline_enabled": false,
+  "background": {"scripts":["js/background.js"]}
 }
