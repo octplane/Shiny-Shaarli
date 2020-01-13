@@ -15,8 +15,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "*://*/*",
-    "tabs"
+    "activeTab"
   ],
   "offline_enabled": false,
   "background": {"scripts":["js/background.js"]}
