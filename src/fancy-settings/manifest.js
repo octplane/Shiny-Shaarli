@@ -18,6 +18,13 @@ this.manifest = {
             "type": "description",
             "text": i18n.get("description")
         },
+        {
+            "tab": i18n.get("Shaarli configuration"),
+            "group": i18n.get("Preferences"),
+            "name": "skip_description",
+            "type": "checkbox",
+            "label": i18n.get("Skip description and start on tags")
+        }
     ],
     "alignment": [
         [
