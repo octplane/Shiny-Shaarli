@@ -15,6 +15,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "*://*/*",
     "activeTab"
   ],
   "offline_enabled": false,
